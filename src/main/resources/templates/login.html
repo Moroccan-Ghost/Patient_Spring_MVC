@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.10.4/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="offset-3 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>LOGIN</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post" th:action="@{/login}">
+                        <div class="mb-3">
+                            <label for="username">UserName</label>
+                            <input id="username" type="text" name="username" class="form-control" placeholder="username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password">Password</label>
+                            <input id="password" placeholder="password" type="password" name="password" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="remember-me">Remember me</label>
+                            <input id="remember-me" type="checkbox" name="remember-me">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

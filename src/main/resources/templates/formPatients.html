@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="template1"
+    >
+<head>
+    <meta charset="UTF-8">
+    <title>Add new Patient</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.10.4/font/bootstrap-icons.css">
+</head>
+<body>
+<div layout:fragment="content1">
+    <div class="container mt-4">
+        <div class="offset-3 col-md-6">
+            <form method="post"  th:action="@{save}">
+                <div class="mb-3">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" name="name" th:value="${patient.name}" class="form-control">
+                    <span th:errors="${patient.name}" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="birthDate">Birth Date</label>
+                    <input id="birthDate" type="date" name="birthDate" th:value="${patient.birthDate}" class="form-control">
+                    <span th:errors="${patient.birthDate}" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="sick">Sick</label>
+                    <input id="sick" type="checkbox" name="sick" th:checked="${patient.sick}">
+                    <span th:errors="${patient.sick}" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="score">Score</label>
+                    <input id="score" type="text" name="score" th:value="${patient.score}" class="form-control">
+                    <span th:errors="${patient.score}" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
